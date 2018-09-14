@@ -19,7 +19,14 @@ $perro->setEdad($edad);
 $dao=new DaoPerro();
 $filas_afectadas=$dao->Grabar($perro);
 if ($filas_afectadas>0) {
-    echo 'Perro registrado';
+    
+    echo "<script>
+    alert('¡El perro se ha guardado!');
+    window.location.href='agregar.php';
+    </script>";
 } else {
-    echo 'Error al registrar el perro';
+    echo "<script>
+    alert('¡No se ha podido guardar el perro!');
+    window.location.href='agregar.php';
+    </script>";
 }

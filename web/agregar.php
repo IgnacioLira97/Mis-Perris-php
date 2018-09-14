@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if(!isset($_SESSION["sesion"])){
+    header("location:login_1.php");
+}
+else{
+    $usuario=$_SESSION["sesion"];
+}
+?>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -21,22 +30,22 @@ and open the template in the editor.
 
         <header>
             <div class="Container">
-                <img src="img/logo.png" alt="logo"  > 
                 <div>
                     <?php
                     include_once'menu.php'
                     ?> 
-                    <nav id="Nav" >
-                        <a class="Prase1" href="agregar.php">Agregar</a>
-                        <a href="eliminar.php">Eliminar</a>
-                        <a href="">Modificar</a>
-                        <a href="listar.php">Listar</a>
-                    </nav> 
-                </div>    
+                      <?php
+                    include_once'menu_perros.php'
+                    ?>  
+                                
+ 
+
+                </div>
+                </div>
         </header>
 
         <form method="POST" action="guardar_perro.php">
-            <table border="1">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Formulario de Ingreso de Perros</th>                        
@@ -52,25 +61,25 @@ and open the template in the editor.
                     <tr>
                         <td>Nombre:</td>
                         <td>
-                            <input type="text" name="txtNombre" value="" />
+                            <input type="text" name="txtNombre" placeholder="Ingrese el Nombre" value="" />
                         </td>
                     </tr>
                     <tr>
                         <td>Raza:</td>
                         <td>
-                            <input type="text" name="txtRaza" value="" />
+                            <input type="text" name="txtRaza" placeholder="Ej: Beagle" value="" />
                         </td>
                     </tr>
                     <tr>
                         <td>Peso:</td>
                         <td>
-                            <input type="number" name="txtPeso" value="" /> kg
+                            <input type="number" name="txtPeso" placeholder="Ingrese Peso" value="" /> kg
                         </td>
                     </tr>
                     <tr>
                         <td>Edad:</td>
                         <td>
-                            <input type="number" name="txtEdad" min="1" max="30" value="" />
+                            <input type="number" name="txtEdad" placeholder="Ingrese el Edad" min="1" max="30" value="" />
                         </td>
                     </tr>
                     <tr>
@@ -84,3 +93,5 @@ and open the template in the editor.
         </form>
     </body>
 </html>
+
+

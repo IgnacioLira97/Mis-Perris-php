@@ -9,30 +9,28 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/design.css " />  
         <title></title>
     </head>
-    <body>
-        
+    <body class="jonny">
+
         <header>
             <div class="Container">
-                <img src="img/logo.png" alt="logo"  > 
-
+                <div>
                     <?php
                     include_once'menu.php'
                     ?> 
-                    <nav id="Nav" >
-                        <a class="Prase1" href="agregar.php">Agregar</a>
-                        <a href="eliminar.php">Eliminar</a>
-                        <a href="">Modificar</a>
-                        <a href="listar.php">Listar</a>
-                    </nav> 
-            </div>  
+                    <?php
+                    include_once'menu_perros.php'
+                    ?>  
 
+
+                </div>
+            </div>
         </header>
-        
+
         <h1>Listado de Perros</h1>
 
-        
-        
-        <table border="1">
+
+
+        <table>
             <tr>
                 <td>Id</td>
                 <td>Nombre</td>
@@ -43,7 +41,7 @@
                 <td>Modificar</td>
 
             </tr>
-            
+
             <?php
             include_once '../controlador/DaoPerro.php';
             $dao = new DaoPerro();

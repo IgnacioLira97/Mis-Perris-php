@@ -19,20 +19,17 @@ and open the template in the editor.
     <body>
 
 
-        <header>
+              <header>
             <div class="Container">
-                <img src="img/logo.png" alt="logo"  > 
                 <div>
                     <?php
                     include_once'menu.php'
                     ?> 
-                    <nav id="Nav" >
-                        <a class="Prase1" href="agregar.php">Agregar</a>
-                        <a href="eliminar.php">Eliminar</a>
-                        <a href="">Modificar</a>
-                        <a href="listar.php">Listar</a>
-                    </nav> 
-                </div>    
+                              <?php
+                    include_once'menu_perros.php'
+                    ?>  
+                </div>
+                </div>
         </header>
         
           <?php
@@ -43,7 +40,7 @@ and open the template in the editor.
           $fila= mysqli_fetch_row($reg);
            ?>
         <div>    <form method="POST" action="modificar_perro.php">
-            <table border="1">
+                <table class="table">
                 <thead>
                     <tr>
                         <th>Formulario de Ingreso de perros</th>                        

@@ -19,7 +19,13 @@ $perro->setEdad($edad);
 $dao=new DaoPerro();
 $filas_afectadas=$dao->Modificar($perro);
 if ($filas_afectadas>0) {
-    echo 'El registro ha sido modificado.';
+    echo "<script>
+    alert('¡El perro se ha modificado!');
+    window.location.href='modificar_perro.php';
+    </script>";
 } else {
-    echo 'El registro no se ha modificado.';
+    echo "<script>
+    alert('¡No se ha podido modificar el registro!');
+    window.location.href='modificar_perro.php';
+    </script>";
 }
